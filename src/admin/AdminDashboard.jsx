@@ -58,26 +58,17 @@ export const AdminDashboard = () => {
   return (
     <div>
       {/* Top Welcome Title */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '28px'
-        }}
-      >
+      <div className="admin-page-header">
         <div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 className="admin-page-title">
             Executive Dashboard
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
+          <p className="admin-page-subtitle">
             Real-time analytics and customer operations persisted via localStorage.
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <Link to="/admin/services" className="btn btn-primary btn-sm" style={{ gap: '6px' }}>
             <Plus size={15} /> Add Service
           </Link>
@@ -88,7 +79,7 @@ export const AdminDashboard = () => {
       </div>
 
       {/* Row 1: Primary Metrics Grid */}
-      <div className="grid grid-cols-4" style={{ marginBottom: '28px' }}>
+      <div className="grid grid-cols-4 admin-metrics-grid" style={{ marginBottom: '28px' }}>
         <StatCard
           title="Total Customers"
           value={totalCustomers}
@@ -124,7 +115,7 @@ export const AdminDashboard = () => {
       </div>
 
       {/* Row 2: Secondary Status Metrics */}
-      <div className="grid grid-cols-4" style={{ marginBottom: '32px' }}>
+      <div className="grid grid-cols-4 admin-secondary-metrics" style={{ marginBottom: '32px' }}>
         <div className="card-solid" style={{ padding: '18px 20px', borderRadius: 'var(--radius-md)' }}>
           <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--status-pending)', textTransform: 'uppercase' }}>
             Pending Bookings
@@ -163,7 +154,7 @@ export const AdminDashboard = () => {
       </div>
 
       {/* Row 3: Data Visualizations (Status distribution + Popular Services) */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '32px' }}>
         {/* Booking Status Distribution */}
         <div
           className="card-solid"
@@ -269,16 +260,8 @@ export const AdminDashboard = () => {
       </div>
 
       {/* Row 4: Recent Bookings Table */}
-      <div
-        className="card-solid"
-        style={{
-          borderRadius: 'var(--radius-lg)',
-          backgroundColor: 'white',
-          padding: '24px',
-          boxShadow: 'var(--shadow-sm)'
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
+      <div className="admin-card">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', flexWrap: 'wrap', gap: '12px' }}>
           <div>
             <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: 0 }}>Recent Appointment Requests</h3>
             <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '2px 0 0' }}>

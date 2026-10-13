@@ -135,21 +135,12 @@ export const AdminServices = () => {
   return (
     <div>
       {/* Top Header */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '28px'
-        }}
-      >
+      <div className="admin-page-header">
         <div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 className="admin-page-title">
             Services & Treatments Catalog
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
+          <p className="admin-page-subtitle">
             Create, update, or remove services offered on the storefront.
           </p>
         </div>
@@ -161,11 +152,9 @@ export const AdminServices = () => {
 
       {/* Filter & Search */}
       <div
-        className="card-solid"
+        className="admin-card"
         style={{
           padding: '16px 20px',
-          borderRadius: 'var(--radius-md)',
-          backgroundColor: 'white',
           marginBottom: '24px',
           display: 'flex',
           flexWrap: 'wrap',
@@ -174,7 +163,7 @@ export const AdminServices = () => {
           justifyContent: 'space-between'
         }}
       >
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        <div className="admin-filter-bar" style={{ marginBottom: 0 }}>
           <button
             type="button"
             onClick={() => setSelectedCategory('all')}
@@ -194,7 +183,7 @@ export const AdminServices = () => {
           ))}
         </div>
 
-        <div className="input-icon-wrapper" style={{ width: '260px' }}>
+        <div className="input-icon-wrapper admin-search-wrapper">
           <Search size={16} className="icon" />
           <input
             type="text"
@@ -208,15 +197,7 @@ export const AdminServices = () => {
       </div>
 
       {/* Services Table */}
-      <div
-        className="card-solid"
-        style={{
-          borderRadius: 'var(--radius-lg)',
-          backgroundColor: 'white',
-          padding: '24px',
-          boxShadow: 'var(--shadow-sm)'
-        }}
-      >
+      <div className="admin-card">
         <div className="table-responsive">
           <table className="data-table">
             <thead>

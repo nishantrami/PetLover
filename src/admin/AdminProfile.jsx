@@ -55,26 +55,20 @@ export const AdminProfile = () => {
   return (
     <div>
       {/* Header */}
-      <div style={{ marginBottom: '28px' }}>
-        <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
-          Admin Profile & System Settings
-        </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
-          Manage administrative credentials and restore demonstration sample datasets.
-        </p>
+      <div className="admin-page-header">
+        <div>
+          <h1 className="admin-page-title">
+            Admin Profile & System Settings
+          </h1>
+          <p className="admin-page-subtitle">
+            Manage administrative credentials and restore demonstration sample datasets.
+          </p>
+        </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
         {/* Left: Admin Settings Form */}
-        <div
-          className="card-solid"
-          style={{
-            padding: '32px',
-            borderRadius: 'var(--radius-lg)',
-            backgroundColor: 'white',
-            boxShadow: 'var(--shadow-sm)'
-          }}
-        >
+        <div className="admin-card card-solid">
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
             <img
               src={form.avatar}
@@ -156,14 +150,7 @@ export const AdminProfile = () => {
 
         {/* Right: Storage & Demo Reset Operations */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div
-            className="card-solid"
-            style={{
-              padding: '30px',
-              borderRadius: 'var(--radius-lg)',
-              backgroundColor: 'white'
-            }}
-          >
+          <div className="admin-card card-solid">
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
               <RotateCcw size={20} color="var(--primary)" />
               <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0 }}>

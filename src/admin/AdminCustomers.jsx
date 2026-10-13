@@ -38,27 +38,18 @@ export const AdminCustomers = () => {
   return (
     <div>
       {/* Header */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '28px'
-        }}
-      >
+      <div className="admin-page-header">
         <div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 className="admin-page-title">
             Customer Management
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
+          <p className="admin-page-subtitle">
             View registered pet parents, their pets, and their booking histories.
           </p>
         </div>
 
         {/* Search */}
-        <div className="input-icon-wrapper" style={{ width: '280px' }}>
+        <div className="input-icon-wrapper admin-search-wrapper">
           <Search size={16} className="icon" />
           <input
             type="text"
@@ -72,15 +63,7 @@ export const AdminCustomers = () => {
       </div>
 
       {/* Table */}
-      <div
-        className="card-solid"
-        style={{
-          borderRadius: 'var(--radius-lg)',
-          backgroundColor: 'white',
-          padding: '24px',
-          boxShadow: 'var(--shadow-sm)'
-        }}
-      >
+      <div className="admin-card">
         <div className="table-responsive">
           <table className="data-table">
             <thead>

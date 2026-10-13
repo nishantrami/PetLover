@@ -52,10 +52,10 @@ export const AdminLogin = () => {
       }}
     >
       <div
+        className="admin-login-card"
         style={{
           maxWidth: '460px',
           width: '100%',
-          padding: '40px 36px',
           borderRadius: 'var(--radius-lg)',
           backgroundColor: '#1E2229',
           border: '1px solid #2E3642',

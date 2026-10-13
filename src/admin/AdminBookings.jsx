@@ -55,27 +55,18 @@ export const AdminBookings = () => {
   return (
     <div>
       {/* Top Header */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '28px'
-        }}
-      >
+      <div className="admin-page-header">
         <div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 className="admin-page-title">
             Booking Management
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
+          <p className="admin-page-subtitle">
             Manage appointments, modify live status, and inspect customer special requests.
           </p>
         </div>
 
         {/* Search */}
-        <div className="input-icon-wrapper" style={{ width: '280px' }}>
+        <div className="input-icon-wrapper admin-search-wrapper">
           <Search size={16} className="icon" />
           <input
             type="text"
@@ -89,7 +80,7 @@ export const AdminBookings = () => {
       </div>
 
       {/* Filter Tabs */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
+      <div className="admin-filter-bar">
         {['All', 'Pending', 'Confirmed', 'In Progress', 'Completed', 'Cancelled'].map((status) => {
           const count =
             status === 'All'
@@ -110,15 +101,7 @@ export const AdminBookings = () => {
       </div>
 
       {/* Table */}
-      <div
-        className="card-solid"
-        style={{
-          borderRadius: 'var(--radius-lg)',
-          backgroundColor: 'white',
-          padding: '24px',
-          boxShadow: 'var(--shadow-sm)'
-        }}
-      >
+      <div className="admin-card">
         <div className="table-responsive">
           <table className="data-table">
             <thead>
@@ -235,7 +218,7 @@ export const AdminBookings = () => {
       >
         {selectedBooking && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
               <div>
                 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Client Name</span>
                 <div style={{ fontSize: '1rem', fontWeight: 700 }}>{selectedBooking.customerName}</div>
@@ -251,7 +234,7 @@ export const AdminBookings = () => {
               </div>
             </div>
 
-            <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
               <div>
                 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Service Treatment</span>
                 <div style={{ fontSize: '0.95rem', fontWeight: 700 }}>{selectedBooking.serviceName}</div>

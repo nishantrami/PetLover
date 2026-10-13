@@ -67,21 +67,6 @@ export const AdminLayout = ({ children }) => {
       )}
 
       <aside
-        style={{
-          width: '270px',
-          backgroundColor: '#1E2229',
-          color: '#E2E8F0',
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'fixed',
-          top: 0,
-          bottom: 0,
-          left: 0,
-          zIndex: 950,
-          transition: 'transform 0.3s ease',
-          transform: sidebarOpen ? 'translateX(0)' : 'none',
-          boxShadow: '4px 0 25px rgba(0, 0, 0, 0.2)'
-        }}
         className={`admin-sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}
       >
         {/* Admin Brand */}
@@ -126,16 +111,10 @@ export const AdminLayout = ({ children }) => {
           <button
             type="button"
             onClick={() => setSidebarOpen(false)}
-            style={{
-              display: 'none',
-              background: 'none',
-              border: 'none',
-              color: '#94A3B8',
-              cursor: 'pointer'
-            }}
             className="mobile-sidebar-close"
+            aria-label="Close admin menu"
           >
-            <X size={22} />
+            <X size={20} />
           </button>
         </div>
 
@@ -257,66 +236,48 @@ export const AdminLayout = ({ children }) => {
       </aside>
 
       {/* Main Content Area */}
-      <div style={{ flex: 1, marginLeft: '270px', display: 'flex', flexDirection: 'column' }} className="admin-main-wrapper">
+      <div className="admin-main-wrapper">
         {/* Top bar */}
-        <header
-          style={{
-            height: '70px',
-            backgroundColor: 'white',
-            borderBottom: '1px solid var(--border-color)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '0 30px',
-            position: 'sticky',
-            top: 0,
-            zIndex: 100
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <header className="admin-main-header">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
             <button
               type="button"
               onClick={() => setSidebarOpen(true)}
-              style={{
-                display: 'none',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                color: 'var(--text-primary)'
-              }}
               className="mobile-sidebar-toggle"
+              aria-label="Open admin navigation menu"
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Shield size={18} color="#7C4DFF" />
-              <span style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                PetLover Administration Control
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0, overflow: 'hidden' }}>
+              <Shield size={18} color="#7C4DFF" style={{ flexShrink: 0 }} />
+              <span className="admin-header-title">
+                PetLover Admin <span className="admin-header-subtext">Control</span>
               </span>
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
             <Link
               to="/"
-              className="btn btn-outline"
-              style={{ padding: '7px 14px', fontSize: '0.82rem', gap: '6px' }}
+              className="btn btn-outline admin-header-store-btn"
+              title="View Public Storefront"
             >
-              <ExternalLink size={14} /> View Public Storefront
+              <ExternalLink size={14} style={{ flexShrink: 0 }} />
+              <span className="store-btn-text">View Storefront</span>
             </Link>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <img
                 src={adminUser?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'}
                 alt="Admin"
-                style={{ width: '38px', height: '38px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #7C4DFF' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #7C4DFF', flexShrink: 0 }}
               />
             </div>
           </div>
         </header>
 
         {/* Page Inner Container */}
-        <main style={{ flex: 1, padding: '30px' }}>
+        <main className="admin-main-content">
           {children || <Outlet />}
         </main>
       </div>

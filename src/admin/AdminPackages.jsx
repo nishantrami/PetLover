@@ -139,21 +139,12 @@ export const AdminPackages = () => {
   return (
     <div>
       {/* Header */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '28px'
-        }}
-      >
+      <div className="admin-page-header">
         <div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 className="admin-page-title">
             Grooming & Spa Packages
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
+          <p className="admin-page-subtitle">
             Manage pricing tiers, included treatments, and marketing badges.
           </p>
         </div>
@@ -168,11 +159,8 @@ export const AdminPackages = () => {
         {packages.map((pkg) => (
           <div
             key={pkg.id}
-            className="card-solid"
+            className="admin-card card-solid"
             style={{
-              padding: '28px',
-              borderRadius: 'var(--radius-lg)',
-              backgroundColor: 'white',
               position: 'relative',
               display: 'flex',
               flexDirection: 'column',

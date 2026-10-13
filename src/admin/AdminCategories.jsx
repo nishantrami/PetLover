@@ -84,21 +84,12 @@ export const AdminCategories = () => {
   return (
     <div>
       {/* Header */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '28px'
-        }}
-      >
+      <div className="admin-page-header">
         <div>
-          <h1 style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 className="admin-page-title">
             Service Categories
           </h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginTop: '4px', margin: 0 }}>
+          <p className="admin-page-subtitle">
             Organize pet treatments and spa services into intuitive customer categories.
           </p>
         </div>
@@ -115,11 +106,8 @@ export const AdminCategories = () => {
           return (
             <div
               key={cat.id}
-              className="card-solid"
+              className="admin-card card-solid"
               style={{
-                padding: '24px',
-                borderRadius: 'var(--radius-lg)',
-                backgroundColor: 'white',
                 borderLeft: `5px solid ${cat.badgeColor || 'var(--primary)'}`
               }}
             >
