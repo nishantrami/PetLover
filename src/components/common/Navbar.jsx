@@ -165,29 +165,31 @@ export const Navbar = () => {
           }}
           className="desktop-actions navbar-actions-group"
         >
-          {/* Admin Switch Link */}
-          <Link
-            to={isAdminLoggedIn ? '/admin/dashboard' : '/admin/login'}
-            className="btn btn-outline"
-            style={{
-              padding: '5px 10px',
-              fontSize: '0.78rem',
-              borderRadius: 'var(--radius-full)',
-              color: '#7C4DFF',
-              borderColor: 'rgba(124, 77, 255, 0.3)',
-              backgroundColor: 'rgba(124, 77, 255, 0.05)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '4px',
-              whiteSpace: 'nowrap',
-              textDecoration: 'none',
-              flexShrink: 0
-            }}
-            title="Administrator Control Panel"
-          >
-            <Shield size={13} color="#7C4DFF" style={{ flexShrink: 0 }} />
-            <span>Admin</span>
-          </Link>
+          {/* Admin Switch Link - Only shown when admin is logged in */}
+          {isAdminLoggedIn && (
+            <Link
+              to="/admin/dashboard"
+              className="btn btn-outline"
+              style={{
+                padding: '5px 10px',
+                fontSize: '0.78rem',
+                borderRadius: 'var(--radius-full)',
+                color: '#7C4DFF',
+                borderColor: 'rgba(124, 77, 255, 0.3)',
+                backgroundColor: 'rgba(124, 77, 255, 0.05)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                whiteSpace: 'nowrap',
+                textDecoration: 'none',
+                flexShrink: 0
+              }}
+              title="Administrator Control Panel"
+            >
+              <Shield size={13} color="#7C4DFF" style={{ flexShrink: 0 }} />
+              <span>Admin Panel</span>
+            </Link>
+          )}
 
           {/* Book Now Button */}
           <Link
@@ -502,24 +504,26 @@ export const Navbar = () => {
               </div>
             )}
 
-            <Link
-              to={isAdminLoggedIn ? '/admin/dashboard' : '/admin/login'}
-              onClick={closeMobileMenu}
-              style={{
-                textAlign: 'center',
-                fontSize: '0.85rem',
-                color: '#7C4DFF',
-                fontWeight: 700,
-                marginTop: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px',
-                textDecoration: 'none'
-              }}
-            >
-              <Shield size={14} /> Open Admin Control Panel
-            </Link>
+            {isAdminLoggedIn && (
+              <Link
+                to="/admin/dashboard"
+                onClick={closeMobileMenu}
+                style={{
+                  textAlign: 'center',
+                  fontSize: '0.85rem',
+                  color: '#7C4DFF',
+                  fontWeight: 700,
+                  marginTop: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '6px',
+                  textDecoration: 'none'
+                }}
+              >
+                <Shield size={14} /> Open Admin Control Panel
+              </Link>
+            )}
           </div>
         </div>
       )}

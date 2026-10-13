@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Shield,
   Sparkles,
   ArrowRight
 } from 'lucide-react';
@@ -177,12 +176,12 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Portal */}
+          {/* Column 4: Contact & Location */}
           <div>
             <h4 style={{ color: 'white', fontSize: '1.05rem', fontWeight: 700, marginBottom: '20px' }}>
               Center Location
             </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#94A3B8' }}>
                 <MapPin size={18} color="var(--primary)" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>124 Blossom Pet Lane, West Valley Center, CA 90210</span>
@@ -191,24 +190,11 @@ export const Footer = () => {
                 <Mail size={18} color="var(--primary)" style={{ flexShrink: 0 }} />
                 <span>care@petlovercenter.com</span>
               </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#94A3B8' }}>
+                <Phone size={18} color="var(--primary)" style={{ flexShrink: 0 }} />
+                <span>+1 (800) 555-PETS (7387)</span>
+              </li>
             </ul>
-
-            <div style={{ borderTop: '1px solid #334155', paddingTop: '16px' }}>
-              <Link
-                to="/admin/login"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontSize: '0.85rem',
-                  color: '#A78BFA',
-                  fontWeight: 600,
-                  transition: 'var(--transition)'
-                }}
-              >
-                <Shield size={16} /> Administrator Management Access
-              </Link>
-            </div>
           </div>
         </div>
 

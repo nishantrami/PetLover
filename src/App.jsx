@@ -13,6 +13,7 @@ import ProtectedRoute from './components/common/ProtectedRoute';
 import AdminProtectedRoute from './components/common/AdminProtectedRoute';
 import AdminLayout from './components/admin/AdminLayout';
 import ToastContainer from './components/common/ToastContainer';
+import AdminSecretListener from './components/common/AdminSecretListener';
 
 // Customer Pages
 import Home from './pages/Home';
@@ -52,6 +53,7 @@ function App() {
         <AdminAuthProvider>
           <DataProvider>
             <BrowserRouter>
+              <AdminSecretListener />
               <ToastContainer />
               <Routes>
                 {/* Public & Customer Routes under CustomerLayout */}

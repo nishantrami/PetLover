@@ -181,12 +181,6 @@ export const Login = () => {
             Register Now
           </Link>
         </div>
-
-        <div style={{ borderTop: '1px solid var(--border-light)', marginTop: '24px', paddingTop: '16px', textAlign: 'center' }}>
-          <Link to="/admin/login" style={{ fontSize: '0.82rem', color: '#7C4DFF', fontWeight: 600 }}>
-            Looking for Staff / Admin Portal? Click here
-          </Link>
-        </div>
       </div>
     </div>
   );
