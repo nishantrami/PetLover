@@ -112,7 +112,7 @@ export const HeroSection = () => {
             <div className="pet-hero-eyebrow">
               <span className="live-pulse-dot" />
               <span>Accepting New Furry VIPs Today</span>
-              <span style={{ color: 'var(--border-hover)' }}>•</span>
+              <span className="pet-hero-eyebrow-divider" style={{ color: 'var(--border-hover)' }}>•</span>
               <span style={{ color: 'var(--secondary)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                 <Sparkles size={14} /> 100% Fear-Free Certified
               </span>

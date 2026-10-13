@@ -1176,8 +1176,10 @@ textarea.form-control {
 
 .pet-hero-gradient-text {
   background: linear-gradient(135deg, #FF5A5F 0%, #FC642D 50%, #FFB400 100%);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #FF5A5F;
   display: inline;
 }
 
@@ -1681,62 +1683,712 @@ textarea.form-control {
   margin-top: 2px;
 }
 
-/* Responsive Media Queries */
+/* Responsive Media Queries for Luxury Hero Section */
 @media (max-width: 1024px) {
+  .pet-hero-section {
+    padding: 50px 0 60px;
+  }
   .pet-hero-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 44px;
+  }
+  .pet-hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+  }
+  .pet-hero-lead {
+    max-width: 100%;
+  }
+  .pet-hero-stage {
+    max-width: 520px;
+    margin: 16px auto 0;
+  }
+  .pet-hero-trust-bar {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 48px;
+    padding-top: 30px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-hero-section {
+    padding: 38px 0 48px;
+  }
+  .pet-hero-grid {
+    gap: 36px;
+  }
+  .pet-hero-eyebrow {
+    margin-bottom: 16px;
+  }
+  .pet-hero-title {
+    font-size: clamp(1.95rem, 6vw, 2.65rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .pet-hero-lead {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
   }
   .pet-hero-stage {
     max-width: 480px;
   }
-  .pet-hero-trust-bar {
-    grid-template-columns: repeat(2, 1fr);
+  .pet-hero-main-img {
+    height: 420px;
   }
 }
 
 @media (max-width: 640px) {
   .pet-hero-section {
-    padding: 40px 0 50px;
+    padding: 28px 0 42px;
+    overflow-x: clip;
   }
-  .pet-hero-title {
-    font-size: 2.1rem;
+  
+  .pet-hero-grid {
+    gap: 32px;
   }
-  .pet-hero-lead {
-    font-size: 1rem;
-  }
-  .pet-hero-stage {
+
+  /* Eyebrow Pill */
+  .pet-hero-eyebrow {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    gap: 8px;
+    flex-wrap: wrap;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    border-radius: var(--radius-full);
     max-width: 100%;
   }
-  .pet-hero-main-img {
-    height: 380px;
+
+  .pet-hero-eyebrow-divider {
+    display: none;
   }
-  .pet-hero-float-card-top {
-    left: 8px;
-    top: -12px;
-    padding: 10px 14px;
-    max-width: 240px;
+
+  /* Title & Lead */
+  .pet-hero-title {
+    font-size: clamp(1.85rem, 6.8vw, 2.35rem);
+    line-height: 1.18;
+    letter-spacing: -0.028em;
+    margin-bottom: 12px;
+    text-wrap: balance;
   }
-  .pet-hero-float-card-bottom {
-    right: 8px;
-    bottom: -16px;
-    padding: 12px 14px;
-    max-width: 260px;
+
+  .pet-hero-lead {
+    font-size: 0.92rem;
+    line-height: 1.58;
+    margin-bottom: 20px;
   }
+
+  /* Treatment Explorer Card */
+  .pet-hero-explorer {
+    padding: 16px 14px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+  }
+
+  .pet-hero-explorer-header {
+    margin-bottom: 10px;
+  }
+
+  .pet-hero-explorer-title {
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .pet-hero-explorer-badge {
+    font-size: 0.72rem;
+    padding: 2px 8px;
+  }
+
+  /* Horizontal Tabs */
+  .pet-hero-tabs {
+    gap: 6px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+
+  .pet-hero-tab-btn {
+    padding: 7px 12px;
+    font-size: 0.8rem;
+    border-radius: var(--radius-full);
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  /* Active Treatment Detail Content */
   .pet-hero-tab-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    padding: 14px;
+    border-radius: 14px;
+    gap: 12px;
   }
+
+  .pet-hero-treatment-info h4 {
+    font-size: 0.92rem;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .pet-hero-treatment-info p {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+
+  .pet-hero-treatment-perks {
+    gap: 6px 10px;
+  }
+
+  .pet-hero-perk-item {
+    font-size: 0.74rem;
+    gap: 4px;
+  }
+
   .pet-hero-book-tab-btn {
     width: 100%;
     justify-content: center;
+    padding: 11px 18px;
+    font-size: 0.86rem;
+    border-radius: var(--radius-full);
+    margin-top: 4px;
   }
-  .pet-hero-primary-btn, .pet-hero-secondary-btn {
+
+  /* CTA Buttons */
+  .pet-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    gap: 10px;
+    margin-bottom: 22px;
   }
+
+  .pet-hero-primary-btn, 
+  .pet-hero-secondary-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 22px;
+    font-size: 0.96rem;
+    border-radius: var(--radius-full);
+  }
+
+  .pet-hero-primary-btn {
+    box-shadow: 0 8px 22px -3px rgba(255, 90, 95, 0.42);
+  }
+
+  /* Social Proof */
+  .pet-hero-social-proof {
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .pet-hero-avatar-item {
+    width: 34px;
+    height: 34px;
+    margin-left: -8px;
+  }
+
+  .pet-hero-stars-row {
+    font-size: 0.88rem;
+  }
+
+  .pet-hero-proof-text {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .pet-hero-proof-sub {
+    font-size: 0.72rem;
+    display: inline;
+  }
+
+  /* Right Column: Visual Stage & Frame */
+  .pet-hero-stage {
+    max-width: 100%;
+    margin: 6px auto 0;
+  }
+
+  .pet-hero-image-wrapper {
+    border-radius: 24px 12px 24px 12px;
+    border-width: 4px;
+    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.18);
+  }
+
+  .pet-hero-main-img {
+    height: 360px;
+  }
+
+  /* Floating Card: Live Tracker (Top Left) */
+  .pet-hero-float-card-top {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    border-radius: 14px;
+    max-width: calc(100% - 140px);
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .pet-hero-tracker-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .pet-hero-tracker-badge {
+    font-size: 0.65rem;
+  }
+
+  .pet-hero-tracker-name {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pet-hero-tracker-status {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Organic Botanical Seal (Top Right) - Stays inside frame */
+  .pet-hero-seal-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: none;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 14px rgba(0, 166, 153, 0.4);
+  }
+
+  /* Verified Parent Love Quote (Bottom Overlay) */
+  .pet-hero-float-card-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    max-width: none;
+    padding: 10px 14px;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .pet-hero-quote-stars {
+    margin-bottom: 3px;
+  }
+
+  .pet-hero-quote-text {
+    font-size: 0.76rem;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pet-hero-quote-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .pet-hero-quote-name {
+    font-size: 0.72rem;
+  }
+
+  .pet-hero-quote-tag {
+    font-size: 0.64rem;
+  }
+
+  /* Trust Matrix Strip */
   .pet-hero-trust-bar {
+    margin-top: 32px;
+    padding-top: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .pet-hero-trust-item {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .pet-hero-trust-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .pet-hero-trust-num {
+    font-size: 0.88rem;
+    line-height: 1.15;
+  }
+
+  .pet-hero-trust-label {
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+}
+
+/* Extra small devices (< 420px) */
+@media (max-width: 420px) {
+  .pet-hero-section {
+    padding: 22px 0 36px;
+  }
+
+  .pet-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .pet-hero-main-img {
+    height: 330px;
+  }
+
+  .pet-hero-trust-bar {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .pet-hero-float-card-top {
+    max-width: calc(100% - 130px);
+  }
+
+  .pet-hero-quote-text {
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* Outline white button for dark/gradient backgrounds */
+.btn-outline-white {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+}
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESCUE FOUNDATION IMPACT SECTION (PIXEL-PERFECT SPECIFICATION)
+   ========================================================================== */
+.rescue-impact-section {
+  background-color: #171A21;
+  color: #FFFFFF;
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rescue-content-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Left Column: Text & Badges */
+.rescue-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rescue-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 90, 95, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  color: #FF7579;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(255, 90, 95, 0.12);
+  user-select: none;
+}
+
+.rescue-badge-icon {
+  flex-shrink: 0;
+  animation: rescueHeartbeat 2.4s ease-in-out infinite;
+}
+
+@keyframes rescueHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.22);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.18);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.rescue-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.2vw, 2.95rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+  max-width: 560px;
+}
+
+.rescue-desc {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  color: #94A3B8;
+  line-height: 1.66;
+  margin-bottom: 34px;
+  max-width: 520px;
+  font-weight: 400;
+}
+
+/* Action Buttons */
+.rescue-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.rescue-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #FF5A5F 0%, #FC642D 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 14px 30px;
+  border-radius: var(--radius-full);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 10px 28px -4px rgba(255, 90, 80, 0.65), 0 0 16px rgba(255, 85, 70, 0.35);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rescue-btn-primary:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -4px rgba(255, 90, 80, 0.8), 0 0 24px rgba(255, 85, 70, 0.5);
+}
+
+.rescue-btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 18px -4px rgba(255, 90, 80, 0.5);
+}
+
+.rescue-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  color: #15181E;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 14px 30px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rescue-btn-secondary:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.rescue-btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Right Column: 2x2 Metric Cards Grid */
+.rescue-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.rescue-stat-card {
+  background-color: #21252C;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rescue-stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.rescue-stat-label {
+  color: #8C96A5;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Card Specific Colors */
+.rescue-stat-number.color-coral {
+  color: #FF5252;
+}
+.rescue-stat-number.color-mint {
+  color: #00D8A5;
+}
+.rescue-stat-number.color-amber {
+  color: #F5A623;
+}
+.rescue-stat-number.color-lavender {
+  color: #A78BFA;
+}
+
+.rescue-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.rescue-stat-card.card-coral:hover {
+  box-shadow: 0 14px 34px -8px rgba(255, 82, 82, 0.3);
+}
+
+.rescue-stat-card.card-mint:hover {
+  box-shadow: 0 14px 34px -8px rgba(0, 216, 165, 0.3);
+}
+
+.rescue-stat-card.card-amber:hover {
+  box-shadow: 0 14px 34px -8px rgba(245, 166, 35, 0.3);
+}
+
+.rescue-stat-card.card-lavender:hover {
+  box-shadow: 0 14px 34px -8px rgba(167, 139, 250, 0.3);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .rescue-impact-section {
+    padding: 75px 0;
+  }
+  .rescue-content-grid {
+    gap: 40px;
+  }
+  .rescue-stat-card {
+    padding: 24px 20px;
+  }
+  .rescue-stat-number {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .rescue-content-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .rescue-title,
+  .rescue-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .rescue-impact-section {
+    padding: 55px 0;
+  }
+  .rescue-title {
+    font-size: 1.95rem;
+    line-height: 1.22;
+  }
+  .rescue-desc {
+    font-size: 0.95rem;
+    margin-bottom: 26px;
+  }
+  .rescue-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+  .rescue-btn-primary,
+  .rescue-btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+  .rescue-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .rescue-stat-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .rescue-stat-number {
+    font-size: 1.9rem;
+  }
+  .rescue-stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .rescue-stats-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 }
-

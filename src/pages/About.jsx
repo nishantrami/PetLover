@@ -284,7 +284,7 @@ export const About = () => {
             <Link to="/booking" className="btn btn-primary" style={{ padding: '12px 28px' }}>
               Book an Appointment <ArrowRight size={16} />
             </Link>
-            <Link to="/contact" className="btn btn-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.7)' }}>
+            <Link to="/contact" className="btn btn-outline-white" style={{ padding: '12px 28px' }}>
               Get In Touch
             </Link>
           </div>

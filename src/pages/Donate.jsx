@@ -3,17 +3,13 @@ import { useData } from '../context/DataContext';
 import { useAuth } from '../context/AuthContext';
 import { useNotification } from '../context/NotificationContext';
 import SectionHeader from '../components/common/SectionHeader';
+import RescueImpactSection from '../components/common/RescueImpactSection';
 import confetti from 'canvas-confetti';
 import {
   Heart,
-  Sparkles,
-  ShieldCheck,
-  CheckCircle2,
   AlertCircle,
   Users,
-  IndianRupee,
-  HeartHandshake,
-  MessageSquare
+  IndianRupee
 } from 'lucide-react';
 
 export const Donate = () => {
@@ -346,6 +342,13 @@ export const Donate = () => {
           </div>
         </div>
       </section>
+
+      {/* Rescue Foundation Impact Breakdown */}
+      <RescueImpactSection
+        showSecondaryBtn={true}
+        secondaryBtnText="Explore Our Story"
+        secondaryBtnLink="/about"
+      />
     </div>
   );
 };

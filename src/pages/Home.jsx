@@ -6,6 +6,7 @@ import ServiceCard from '../components/common/ServiceCard';
 import PackageCard from '../components/common/PackageCard';
 import ReviewCard from '../components/common/ReviewCard';
 import HeroSection from '../components/common/HeroSection';
+import RescueImpactSection from '../components/common/RescueImpactSection';
 import {
   Sparkles,
   ShieldCheck,
@@ -271,61 +272,12 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 7. RESCUE & DONATIONS CALLOUT BANNER */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, #1E2229 0%, #2D3436 100%)', color: 'white' }}>
-        <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '40px',
-              alignItems: 'center'
-            }}
-          >
-            <div>
-              <span
-                className="badge"
-                style={{ backgroundColor: 'rgba(255, 90, 95, 0.2)', color: '#FF767B', border: '1px solid rgba(255, 90, 95, 0.4)', marginBottom: '16px' }}
-              >
-                <Heart size={13} fill="#FF767B" /> PetLover Rescue Foundation
-              </span>
-              <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.5rem)', fontWeight: 800, color: 'white', marginBottom: '16px' }}>
-                Help Us Provide Food & Medical Care to Stray Paws
-              </h2>
-              <p style={{ fontSize: '1rem', color: '#CBD5E1', lineHeight: 1.6, marginBottom: '28px' }}>
-                100% of community donations go directly toward emergency surgeries, winter shelters, vaccination drives, and rescue cat/dog food supplies.
-              </p>
-              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <Link to="/donate" className="btn btn-primary" style={{ padding: '12px 28px' }}>
-                  Support a Rescue Pet Today <ArrowRight size={16} />
-                </Link>
-                <Link to="/about" className="btn btn-outline" style={{ color: 'white', borderColor: '#475569' }}>
-                  Read Our Mission
-                </Link>
-              </div>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              <div style={{ backgroundColor: '#272C35', padding: '24px', borderRadius: 'var(--radius-md)', border: '1px solid #3E4654' }}>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--primary)' }}>340+</div>
-                <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Stray Animals Rescued & Rehomed</div>
-              </div>
-              <div style={{ backgroundColor: '#272C35', padding: '24px', borderRadius: 'var(--radius-md)', border: '1px solid #3E4654' }}>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--secondary)' }}>₹15.4L</div>
-                <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Medical Aid Funded by Donors</div>
-              </div>
-              <div style={{ backgroundColor: '#272C35', padding: '24px', borderRadius: 'var(--radius-md)', border: '1px solid #3E4654' }}>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#FFD166' }}>1,500+</div>
-                <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Monthly Stray Meals Distributed</div>
-              </div>
-              <div style={{ backgroundColor: '#272C35', padding: '24px', borderRadius: 'var(--radius-md)', border: '1px solid #3E4654' }}>
-                <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#A78BFA' }}>0%</div>
-                <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>Administrative Overhead Fees</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 7. RESCUE & DONATIONS CALLOUT BANNER (PIXEL-PERFECT FROM DESIGN) */}
+      <RescueImpactSection
+        showSecondaryBtn={true}
+        secondaryBtnText="Read Our Mission"
+        secondaryBtnLink="/about"
+      />
 
       {/* 8. QUICK FINAL CTA BANNER */}
       <section
